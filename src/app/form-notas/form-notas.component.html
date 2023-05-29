@@ -1,0 +1,82 @@
+<mat-card>
+    <mat-toolbar>
+        <span>Notas</span>
+      </mat-toolbar>
+
+      <div *ngIf="notas$ | async as notas; else loading">
+        <table mat-table [dataSource]="notas" class="mat-elevation-z8">
+          <!-- Position Column --> 
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                <td mat-cell *matCellDef="let nota"> {{ nota.name }} </td>
+            </ng-container>
+          <!-- Name Column -->
+            <ng-container matColumnDef="turma">
+                <th mat-header-cell *matHeaderCellDef> Turma </th>
+                <td mat-cell *matCellDef="let nota"> {{ nota.turma }} </td>
+            </ng-container>
+          <!-- Weight Column -->
+            <ng-container matColumnDef="situacao">
+                <th mat-header-cell *matHeaderCellDef> Situação </th>
+                <td mat-cell *matCellDef="let nota"> {{ nota.situacao }} </td>
+            </ng-container>
+          <!-- Symbol Column -->
+            <ng-container matColumnDef="nota1">
+                <th mat-header-cell *matHeaderCellDef> 1ª Avaliação </th>
+                <td mat-cell *matCellDef="let nota"> {{ nota.nota1 }} </td>
+            </ng-container>
+          <!-- Symbol Column -->
+            <ng-container matColumnDef="nota2">
+                <th mat-header-cell *matHeaderCellDef> 2ª Avaliação </th>
+                <td mat-cell *matCellDef="let nota"> {{ nota.nota2 }} </td>
+            </ng-container>
+          <!-- Symbol Column -->
+            <ng-container matColumnDef="trabalhos">
+                <th mat-header-cell *matHeaderCellDef> Trabalhos </th>
+                <td mat-cell *matCellDef="let nota"> {{ nota.trabalhos }} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="pvfinal">
+                <th mat-header-cell *matHeaderCellDef> Prova final </th>
+                <td mat-cell *matCellDef="let nota"> {{ nota.pvfinal }} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="media">
+                <th mat-header-cell *matHeaderCellDef> Média </th>
+                <td mat-cell *matCellDef="let nota"> {{ nota.media }} </td>
+            </ng-container>
+
+             <!-- Coluna de Ações -->
+
+             <ng-container matColumnDef="actions">
+              <mat-header-cell *matHeaderCellDef>
+                <button mat-mini-fab color="accent" aria-label="Add column">
+                  <mat-icon (click)="onAdd()">add</mat-icon>
+                </button>
+              </mat-header-cell>
+
+              <mat-cell *matCellDef="let nota">
+                <button mat-icon-button color="accent" aria-label="Editar Column">
+                  <mat-icon>edit</mat-icon>
+                </button>
+
+                <button mat-icon-button color="accent" aria-label="Deletar Column">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </mat-cell>
+
+            </ng-container>
+
+
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+
+      <ng-template #loading>
+        <div class="load-spinner">
+          <mat-spinner></mat-spinner>
+        </div>
+      </ng-template>
+</mat-card>

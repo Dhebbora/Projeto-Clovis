@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "1",
+    "name": "Dhebbora",
+    "turma":"manhã",
+    "situacao":"APROVADA",
+    "nota1":"8,0",
+    "nota2":"6,5",
+    "trabalhos":"9,0",
+    "pvfinal": "10,00",
+    "media": "9,5"
+  },
+  {
+    "_id": "2",
+    "name": "Vilka",
+    "turma":"manhã",
+    "situacao":"APROVADA",
+    "nota1":"8,0",
+    "nota2":"6,5",
+    "trabalhos":"9,0",
+    "pvfinal":"10,00",
+    "media":"9,5"
+  },
+  {
+    "_id": "3",
+    "name": "Messias",
+    "turma":"manhã",
+    "situacao":"APROVADO",
+    "nota1":"8,0",
+    "nota2":"6,5",
+    "trabalhos":"9,0",
+    "pvfinal":"10,00",
+    "media":"9,5"
+  }
+]

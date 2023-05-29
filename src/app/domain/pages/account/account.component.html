@@ -1,0 +1,21 @@
+<div class="container">
+        <mat-card class="content">
+            <span class="txt-account">Portal do Professor</span>
+            <form class="card">
+                <mat-form-field class=".example-container">
+                    <mat-label>Matricula</mat-label>
+                    <input matInput placeholder="apenas números">
+                </mat-form-field>
+            
+                <mat-form-field appearance="fill" class=".example-container">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="showHide()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                </mat-form-field>
+
+                <button type="submit" click="acess()" routerLinkActive="active" routerLink="base" class="btn-acces">Acessar</button>
+            </form>
+        </mat-card>
+</div>
